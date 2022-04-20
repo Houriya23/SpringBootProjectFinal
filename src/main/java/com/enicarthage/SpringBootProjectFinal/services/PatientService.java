@@ -27,5 +27,8 @@ public class PatientService implements IPatientService {
 		return (List<Patient>) patientRepository.findAll();
 	}
 	
-
+	@Override
+	public Patient getpatient(Long id) {
+		return patientRepository.findById(id).get() ;
+	}
 }

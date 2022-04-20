@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,6 +17,8 @@ import com.enicarthage.SpringBootProjectFinal.repositories.PersonRepository;
 import com.enicarthage.SpringBootProjectFinal.services.IPersonService;
 import com.enicarthage.SpringBootProjectFinal.services.PatientService;
 import com.enicarthage.SpringBootProjectFinal.services.PersonService;
+
+import net.bytebuddy.dynamic.DynamicType.Builder.FieldDefinition.Optional;
 
 @RestController
 @RequestMapping({ "/patient" })
@@ -35,4 +38,11 @@ public class PatientController {
 		});
 		return patients;
 	}
+	/*
+	@GetMapping("{userId}")
+	public Patient getpatient(@PathVariable Long patientId) {		
+		Optional<Patient> p = patientRepository.findById(patientId);
+		return p.get();
+	}
+	*/
 }
