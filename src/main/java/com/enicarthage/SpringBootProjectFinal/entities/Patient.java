@@ -2,82 +2,84 @@ package com.enicarthage.SpringBootProjectFinal.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
 @Entity
-public class Patient extends User {
+@Table(name = "PATIENT")
+public class Patient extends Person {
 
-	@Column(name = "first_name")
-	@NotEmpty(message = "*Please provide your firstname")
-	private String firstName;
+	@Column(name = "pname")
+	@NotEmpty(message = "*Please provide your name")
+	private String pName;
 
-	@Column(name = "last_name")
-	@NotEmpty(message = "*Please provide your last name")
-	private String lastName;
+	@Column(name = "pdob")
+	@NotEmpty(message = "*Please provide your date of birth")
+	private String pDob;
 
-	@Column(name = "phone")
-	private Long phoneNumber;
+	
 
-	@Column(name = "address")
-	private String address;
+	@Column(name = "padd")
+	private String pAdd;
+	
+	@Column(name = "pmobile")
+	private Long pMobileNo;
 
-	@Column(name = "ville")
-	private String ville;
-
-	@Column(name = "sexe")
-	private String sexe;
+	
 
 	public Patient() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public String getFirstName() {
-		return firstName;
+
+
+	public String getpName() {
+		return pName;
 	}
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
+
+
+	public void setpName(String pName) {
+		this.pName = pName;
 	}
 
-	public String getLastName() {
-		return lastName;
+
+
+	public String getpDob() {
+		return pDob;
 	}
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+
+
+	public void setpDob(String pDob) {
+		this.pDob = pDob;
 	}
 
-	public Long getPhoneNumber() {
-		return phoneNumber;
+
+
+	public String getpAdd() {
+		return pAdd;
 	}
 
-	public void setPhoneNumber(Long phoneNumber) {
-		this.phoneNumber = phoneNumber;
+
+
+	public void setpAdd(String pAdd) {
+		this.pAdd = pAdd;
 	}
 
-	public String getVille() {
-		return ville;
+
+
+	public Long getpMobileNo() {
+		return pMobileNo;
 	}
 
-	public void setVille(String ville) {
-		this.ville = ville;
+
+
+	public void setpMobileNo(Long pMobileNo) {
+		this.pMobileNo = pMobileNo;
 	}
 
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public void setSexe(String sexe) {
-		this.sexe = sexe;
-	}
-
-	public String getSexe() {
-		return sexe;
-	}
+	
 
 }

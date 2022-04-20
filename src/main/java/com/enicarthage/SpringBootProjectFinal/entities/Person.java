@@ -21,10 +21,10 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "users", uniqueConstraints = { @UniqueConstraint(columnNames = "username"),
+@Table(name = "persons", uniqueConstraints = { @UniqueConstraint(columnNames = "username"),
 		@UniqueConstraint(columnNames = "email") })
 @Inheritance(strategy = InheritanceType.JOINED)
-public class User {
+public class Person {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
